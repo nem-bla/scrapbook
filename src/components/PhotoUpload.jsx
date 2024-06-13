@@ -3,6 +3,7 @@ import Card from './Card';
 import { Link } from 'react-router-dom';
 
 const PhotoUpload = () => {
+
   const fileSelectedHandler = event => {
     console.log(event); // Log the event
 
@@ -16,7 +17,7 @@ const PhotoUpload = () => {
         <Card bg='bg-green-50'>
           <h2 className="text-2xl font-bold">Upload your photos</h2>
           <p className="mt-2 mb-4">
-            Upload one at a time
+            Please upload one photo at a time
           </p>
           <input type="file" onChange={fileSelectedHandler} />
         </Card>

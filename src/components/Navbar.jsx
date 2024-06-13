@@ -35,12 +35,12 @@ const Navbar = () => {
           <ul className="flex flex-col md:flex-row items-center md:items-center">
             <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:text-green-500 duration-200 cursor-pointer active">
               <NavLink to='/create'>
-                Create Scrapbook
+                Upload
               </NavLink>
             </li>
             <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:text-green-500 duration-200 cursor-pointer">
               <NavLink to='/collections'>
-                Collections
+                Collection
               </NavLink>
             </li>
             <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:text-green-500 duration-200 cursor-pointer">

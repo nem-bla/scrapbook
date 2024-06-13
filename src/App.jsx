@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout';
 import Create from './pages/Create';
 import HomePage from './pages/HomePage';
 import Contact from './pages/Contact';
 import Collections from './pages/Collections';
+import Axios from 'axios';
 
 
 const App = () => {
+
+  // test connection to backend
+  const [data, setData] = useState();
+
+  const getData = async () => {
+    try {
+      const response = await Axios.get('/getData');
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+
+    
+  };
+
   // Add a post
 
 
@@ -29,9 +46,16 @@ const App = () => {
     )
   );
 
+  useEffect(() => {
+      getData();
+  }, []);
 
   return (
+    <>
     <RouterProvider router={router}/>
+    {data}
+    </>
+    
   )
 };
 

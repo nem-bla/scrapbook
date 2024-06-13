@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Collections = () => {
+
+
+
   return (
     <div>
-      <h1>Collections</h1>
+      <h1>Hello</h1>
     </div>
   )
 }
