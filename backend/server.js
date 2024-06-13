@@ -1,9 +1,13 @@
 // server.js
 
+import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import multer from 'multer';
 import cors from 'cors';
+
+// point to .env file
+dotenv.config({path: '../.env'});
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -12,9 +16,11 @@ app.use(cors({
     origin: 'http://localhost/3000'
 }));
 
+const mongo = process.env.URI;
 
+console.log(mongo);
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://nembla:nembla123@memories.q5douqc.mongodb.net/?retryWrites=true&w=majority&appName=Memories', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongo, {})
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 
