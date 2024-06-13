@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoUpload from '../components/PhotoUpload';
 import Preview from '../components/Preview';
+import axios from 'axios';
 
 const Create = () => {
   return (

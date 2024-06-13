@@ -8,7 +8,6 @@ const Collections = () => {
     try {
       const response = await Axios.get('http://localhost:8000/api/getData');
       setData(response.data);
-      console.log(response);
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
