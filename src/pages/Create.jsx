@@ -6,7 +6,7 @@ import axios from 'axios';
 const Create = () => {
   return (
     <>
-      <div className='relative bg-green-100 min-h-screen'>
+      <div className='relative min-h-screen'>
         <h1 className=''></h1>
       </div>
       <div className="absolute top-[200px] left-0 z-10">
