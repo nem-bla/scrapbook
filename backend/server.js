@@ -13,12 +13,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors({
-    origin: 'http://localhost/3000'
+    origin: 'http://localhost:3000'
 }));
 
 const mongo = process.env.URI;
 
-console.log(mongo);
 // Connect to MongoDB
 mongoose.connect(mongo, {})
     .then(() => console.log('MongoDB connected'))
@@ -34,8 +33,8 @@ app.post('/upload', upload.single('image'), (req, res) => {
 });
 
 // test connection
-app.get('/getData', (req, res) => {
-    res.send({ message: 'Hello from the backend!'});
+app.get('/api/getData', (req, res) => {
+    res.send('Packet');
 });
 
 

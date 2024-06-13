@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 const Collections = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState('');
 
   const getData = async () => {
     try {
-      const response = await Axios.get('/getData');
+      const response = await Axios.get('http://localhost:8000/api/getData');
       setData(response.data);
-      console.log(response.data);
+      console.log(response);
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
