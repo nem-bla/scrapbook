@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import Card from './Card';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const PhotoUpload = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -26,6 +27,7 @@ const PhotoUpload = () => {
                 }
             });
             console.log('File uploaded successfully:', response.data);
+            toast.success('Image uploaded successfully!');
         } catch (error) {
             console.error('Error uploading file:', error);
         }

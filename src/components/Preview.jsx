@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import Axios
 import Card from './Card';
 import Frame from '../assets/frame.png';
-import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Preview = () => {
   const [imageUrl, setImageUrl] = useState(Frame); // Initialize with placeholder
