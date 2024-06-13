@@ -6,8 +6,10 @@ import mongoose from 'mongoose';
 import multer from 'multer';
 import cors from 'cors';
 import Photo from './models/Photo.js'; // Import the Photo model
+import { __dirname } from './utils.js'; // Import the helper function
+import path from 'path'; // Import path
 
-// point to .env file
+// Point to .env file
 dotenv.config({ path: '../.env' });
 
 const app = express();
@@ -48,22 +50,20 @@ app.post('/api/upload', upload.single('image'), async (req, res) => {
     }
 });
 
-// Route to retrieve an image URL
-app.get('/api/image', async (req, res) => {
+// Route to retrieve all images
+app.get('/api/images', async (req, res) => {
     try {
-      // Fetch the most recent photo (modify query as needed)
-      const photo = await Photo.findOne().sort({ _id: -1 }); // Sorts by most recent
-  
-      if (!photo) {
-        return res.json({ imageUrl: null }); // Return null if no image found
-      }
-  
-      res.json({ imageUrl: photo.path }); // Return image path
+        const photos = await Photo.find(); // Fetch all photos
+        const imageUrls = photos.map(photo => `http://localhost:8000/uploads/${photo.filename}`);
+        res.json({ imageUrls });
     } catch (error) {
-      console.error('Error fetching image:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error fetching images:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-  });
+});
+
+// Serve static files from the 'uploads' directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Test connection
 app.get('/api/getData', (req, res) => {
