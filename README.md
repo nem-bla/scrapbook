@@ -2,7 +2,7 @@
 
 This is a full-stack application that allows users to upload images to a hosted Mongo Database.  
 
-## techonology - what I used
+## technology - what I used
 
 Front-end: React, Tailwind
 
