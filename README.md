@@ -1,9 +1,7 @@
-# React + Vite
+### scrapbook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a full-stack application that allows users to upload images to a hosted Mongo Database.  
 
-Currently, two official plugins are available:
+## homepage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# scrapbook
+![homepage](https://raw.githubusercontent.com/nem-bla/scrapbook/main/images/Screenshot%202024-06-13%20at%207.54.50%E2%80%AFPM.png)
