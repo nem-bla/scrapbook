@@ -5,6 +5,7 @@ This is a full-stack application that allows users to upload images to a hosted 
 ## techonology - what I used
 
 Front-end: React, Tailwind
+
 Back-end: Node.js, Express.js, MongoDB, Mongoose, Axios, Multer
 
 ## technology - why I used it
